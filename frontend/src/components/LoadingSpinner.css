@@ -1,0 +1,653 @@
+/* Base Spinner Styles */
+.spinner {
+display: inline-block;
+position: relative;
+}
+
+.spinner-circle {
+border: 4px solid #f3f3f3;
+border-top: 4px solid #007bff;
+border-radius: 50%;
+animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+0% {
+transform: rotate(0deg);
+}
+100% {
+transform: rotate(360deg);
+}
+}
+
+/* Spinner Sizes */
+.spinner-small .spinner-circle {
+width: 20px;
+height: 20px;
+border-width: 2px;
+}
+
+.spinner-medium .spinner-circle {
+width: 40px;
+height: 40px;
+border-width: 4px;
+}
+
+.spinner-large .spinner-circle {
+width: 60px;
+height: 60px;
+border-width: 6px;
+}
+
+/* Spinner Colors */
+.spinner-primary .spinner-circle {
+border-color: #f3f3f3;
+border-top-color: #007bff;
+}
+
+.spinner-secondary .spinner-circle {
+border-color: #f3f3f3;
+border-top-color: #6c757d;
+}
+
+.spinner-success .spinner-circle {
+border-color: #f3f3f3;
+border-top-color: #28a745;
+}
+
+.spinner-warning .spinner-circle {
+border-color: #f3f3f3;
+border-top-color: #ffc107;
+}
+
+.spinner-danger .spinner-circle {
+border-color: #f3f3f3;
+border-top-color: #dc3545;
+}
+
+/* Overlay Spinner */
+.spinner-overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+background-color: rgba(0, 0, 0, 0.5);
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 9999;
+backdrop-filter: blur(2px);
+}
+
+.spinner-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 2rem;
+background: white;
+border-radius: 12px;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+min-width: 200px;
+}
+
+.spinner-message {
+margin-top: 1rem;
+font-size: 1.1rem;
+color: #333;
+text-align: center;
+font-weight: 500;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* Inline Spinner */
+.spinner-inline {
+display: inline-flex;
+align-items: center;
+gap: 0.75rem;
+}
+
+.spinner-message-inline {
+font-size: 0.9rem;
+color: #666;
+font-weight: 500;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* ===================================
+DOT LOADER STYLES
+=================================== */
+
+.dot-loader-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 1rem;
+}
+
+.dot-loader {
+display: flex;
+gap: 0.4rem;
+align-items: center;
+justify-content: center;
+}
+
+.dot-loader .dot {
+border-radius: 50%;
+animation: dotBounce 1.4s ease-in-out infinite both;
+}
+
+.dot-loader .dot:nth-child(1) {
+animation-delay: -0.32s;
+}
+.dot-loader .dot:nth-child(2) {
+animation-delay: -0.16s;
+}
+.dot-loader .dot:nth-child(3) {
+animation-delay: 0s;
+}
+
+@keyframes dotBounce {
+0%, 80%, 100% {
+transform: scale(0.8);
+opacity: 0.5;
+}
+40% {
+transform: scale(1.2);
+opacity: 1;
+}
+}
+
+/* Dot Sizes */
+.dots-small .dot {
+width: 8px;
+height: 8px;
+}
+
+.dots-medium .dot {
+width: 12px;
+height: 12px;
+}
+
+.dots-large .dot {
+width: 16px;
+height: 16px;
+}
+
+/* Dot Colors */
+.dots-primary .dot {
+background-color: #007bff;
+}
+.dots-secondary .dot {
+background-color: #6c757d;
+}
+.dots-success .dot {
+background-color: #28a745;
+}
+.dots-warning .dot {
+background-color: #ffc107;
+}
+.dots-danger .dot {
+background-color: #dc3545;
+}
+
+.dot-loader-message {
+font-size: 1rem;
+color: #666;
+margin: 0;
+text-align: center;
+font-weight: 500;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* ===================================
+PROGRESS LOADER STYLES
+=================================== */
+
+.progress-loader-container {
+width: 100%;
+max-width: 400px;
+margin: 0 auto;
+padding: 1rem;
+}
+
+.progress-loader-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 0.75rem;
+}
+
+.progress-message {
+font-size: 0.95rem;
+color: #333;
+font-weight: 500;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.progress-percentage {
+font-size: 0.9rem;
+color: #007bff;
+font-weight: 600;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.progress-bar-container {
+width: 100%;
+height: 10px;
+background-color: #e9ecef;
+border-radius: 5px;
+overflow: hidden;
+position: relative;
+box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+height: 100%;
+transition: width 0.4s ease-in-out;
+border-radius: 5px;
+position: relative;
+}
+
+.progress-bar::after {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: linear-gradient(45deg, rgba(255,255,255,0.2) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.2) 75%, transparent 75%);
+background-size: 20px 20px;
+animation: progressStripes 1s linear infinite;
+}
+
+@keyframes progressStripes {
+0% {
+background-position: 0 0;
+}
+100% {
+background-position: 20px 0;
+}
+}
+
+/* Progress Bar Colors */
+.progress-primary {
+background: linear-gradient(90deg, #007bff 0%, #0056b3 100%);
+}
+.progress-secondary {
+background: linear-gradient(90deg, #6c757d 0%, #495057 100%);
+}
+.progress-success {
+background: linear-gradient(90deg, #28a745 0%, #1e7e34 100%);
+}
+.progress-warning {
+background: linear-gradient(90deg, #ffc107 0%, #d39e00 100%);
+}
+.progress-danger {
+background: linear-gradient(90deg, #dc3545 0%, #bd2130 100%);
+}
+
+/* Indeterminate Progress Bar */
+.progress-bar.indeterminate {
+width: 40% !important;
+animation: progressIndeterminate 1.5s ease-in-out infinite;
+}
+
+.progress-bar.indeterminate::after {
+animation: none;
+}
+
+@keyframes progressIndeterminate {
+0% {
+transform: translateX(-100%);
+}
+50% {
+transform: translateX(300%);
+}
+100% {
+transform: translateX(-100%);
+}
+}
+
+/* ===================================
+SKELETON LOADER STYLES
+=================================== */
+
+.skeleton-loader {
+width: 100%;
+}
+
+.skeleton-line {
+background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+background-size: 200% 100%;
+animation: skeletonShimmer 1.5s infinite ease-in-out;
+border-radius: 4px;
+margin-bottom: 0.75rem;
+min-height: 1rem;
+}
+
+@keyframes skeletonShimmer {
+0% {
+background-position: -200% 0;
+}
+100% {
+background-position: 200% 0;
+}
+}
+
+/* Skeleton Card */
+.skeleton-card {
+display: flex;
+padding: 1.5rem;
+gap: 1rem;
+border: 1px solid #f0f0f0;
+border-radius: 8px;
+background: white;
+}
+
+.skeleton-avatar {
+width: 64px;
+height: 64px;
+border-radius: 50%;
+background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+background-size: 200% 100%;
+animation: skeletonShimmer 1.5s infinite ease-in-out;
+flex-shrink: 0;
+}
+
+.skeleton-content {
+flex: 1;
+display: flex;
+flex-direction: column;
+gap: 0.5rem;
+}
+
+.skeleton-title {
+height: 1.25rem;
+width: 70%;
+background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+background-size: 200% 100%;
+animation: skeletonShimmer 1.5s infinite ease-in-out;
+border-radius: 4px;
+}
+
+.skeleton-text {
+height: 1rem;
+width: 100%;
+background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+background-size: 200% 100%;
+animation: skeletonShimmer 1.5s infinite ease-in-out;
+border-radius: 4px;
+}
+
+.skeleton-text-short {
+height: 1rem;
+width: 60%;
+background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+background-size: 200% 100%;
+animation: skeletonShimmer 1.5s infinite ease-in-out;
+border-radius: 4px;
+}
+
+/* Skeleton Table */
+.skeleton-table {
+width: 100%;
+border: 1px solid #f0f0f0;
+border-radius: 8px;
+overflow: hidden;
+background: white;
+}
+
+.skeleton-table-header {
+display: flex;
+gap: 1rem;
+padding: 1rem;
+background-color: #f8f9fa;
+border-bottom: 1px solid #e9ecef;
+}
+
+.skeleton-header-cell {
+height: 1.25rem;
+flex: 1;
+background: linear-gradient(90deg, #e0e0e0 25%, #d0d0d0 50%, #e0e0e0 75%);
+background-size: 200% 100%;
+animation: skeletonShimmer 1.5s infinite ease-in-out;
+border-radius: 4px;
+}
+
+.skeleton-table-row {
+display: flex;
+gap: 1rem;
+padding: 1rem;
+border-bottom: 1px solid #f8f9fa;
+}
+
+.skeleton-table-row:last-child {
+border-bottom: none;
+}
+
+.skeleton-cell {
+height: 1rem;
+flex: 1;
+background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+background-size: 200% 100%;
+animation: skeletonShimmer 1.5s infinite ease-in-out;
+border-radius: 4px;
+}
+
+/* ===================================
+FILE UPLOAD LOADER STYLES
+=================================== */
+
+.file-upload-loader {
+text-align: center;
+padding: 2.5rem;
+background: white;
+border-radius: 12px;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+max-width: 500px;
+margin: 2rem auto;
+border: 2px solid #f0f0f0;
+}
+
+.upload-icon {
+font-size: 3.5rem;
+margin-bottom: 1rem;
+animation: bounce 2s infinite ease-in-out;
+display: block;
+}
+
+@keyframes bounce {
+0%, 20%, 50%, 80%, 100% {
+transform: translateY(0);
+}
+40% {
+transform: translateY(-12px);
+}
+60% {
+transform: translateY(-6px);
+}
+}
+
+.upload-title {
+font-size: 1.5rem;
+color: #333;
+margin-bottom: 0.5rem;
+font-weight: 600;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.upload-filename {
+font-size: 0.9rem;
+color: #666;
+margin-bottom: 1.5rem;
+font-weight: 500;
+word-break: break-all;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+background-color: #f8f9fa;
+padding: 0.5rem 1rem;
+border-radius: 6px;
+display: inline-block;
+}
+
+.upload-stage {
+margin-bottom: 1.5rem;
+}
+
+.stage-message {
+font-size: 1.1rem;
+color: #555;
+font-weight: 500;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.upload-progress {
+width: 100%;
+height: 12px;
+background-color: #e9ecef;
+border-radius: 6px;
+overflow: hidden;
+margin-bottom: 2rem;
+box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.upload-progress-bar {
+height: 100%;
+transition: width 0.4s ease-in-out;
+border-radius: 6px;
+position: relative;
+}
+
+.upload-progress-bar::after {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: linear-gradient(45deg, rgba(255,255,255,0.3) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.3) 75%, transparent 75%);
+background-size: 15px 15px;
+animation: progressStripes 1s linear infinite;
+}
+
+.upload-steps {
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: relative;
+margin-top: 1.5rem;
+padding: 0 0.5rem;
+}
+
+.upload-steps::before {
+content: '';
+position: absolute;
+top: 50%;
+left: 10%;
+right: 10%;
+height: 2px;
+background-color: #e9ecef;
+z-index: 1;
+transform: translateY(-50%);
+}
+
+.step {
+background: #e9ecef;
+color: #6c757d;
+padding: 0.5rem 1rem;
+border-radius: 20px;
+font-size: 0.8rem;
+font-weight: 600;
+position: relative;
+z-index: 2;
+transition: all 0.3s ease;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+border: 2px solid transparent;
+min-width: 80px;
+}
+
+.step.completed {
+background: #28a745;
+color: white;
+transform: scale(1.05);
+border-color: #1e7e34;
+box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.spinner-overlay .spinner-container {
+padding: 1.5rem;
+margin: 1rem;
+min-width: 180px;
+}
+
+.file-upload-loader {
+padding: 2rem 1.5rem;
+margin: 1rem;
+}
+
+.upload-steps {
+flex-wrap: wrap;
+gap: 0.5rem;
+justify-content: center;
+}
+
+.upload-steps::before {
+display: none;
+}
+
+.step {
+padding: 0.4rem 0.8rem;
+font-size: 0.75rem;
+min-width: auto;
+}
+
+.progress-loader-container {
+max-width: 90%;
+padding: 0.5rem;
+}
+
+.skeleton-card {
+padding: 1rem;
+}
+}
+
+@media (max-width: 480px) {
+.upload-title {
+font-size: 1.3rem;
+}
+
+.upload-icon {
+font-size: 2.5rem;
+}
+
+.skeleton-card {
+flex-direction: column;
+align-items: center;
+text-align: center;
+}
+
+.skeleton-avatar {
+width: 80px;
+height: 80px;
+}
+
+.skeleton-content {
+width: 100%;
+align-items: center;
+}
+
+.skeleton-table-header,
+.skeleton-table-row {
+flex-direction: column;
+gap: 0.5rem;
+}
+
+.file-upload-loader {
+padding: 1.5rem 1rem;
+}
+}
